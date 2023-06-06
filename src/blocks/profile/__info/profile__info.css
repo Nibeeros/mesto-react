@@ -1,31 +1,14 @@
 .profile__info {
-  display: grid;
-  grid-template-columns: auto 24px;
-  grid-template-areas: "profile__name profile__edit-Button"
-                       "profile__job .";
-  row-gap: 16px;
-  column-gap: 18px;
-  align-items: end;
+  max-width: 580px;
+  width: 100%;
+  display: flex;
   margin-left: 30px;
-  max-width: 430px;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1023px) {
   .profile__info {
-    grid-template-columns: auto 18px;
-    justify-content: flex-start;
-    column-gap: 10px;
-    margin-left: 14px;
-    margin: 26px 0 33px;
-    padding-left: 19px;
-    row-gap: 6px;
-    max-width: 200px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .profile__info {
-    max-width: 250px;
-    text-align: center;
+    margin-left: 0;
   }
 }

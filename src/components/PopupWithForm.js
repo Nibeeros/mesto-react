@@ -1,28 +1,34 @@
-import popupIcon from "../images/close-icon.svg";
-
 function PopupWithForm(props) {
   return (
-    <div className={`popup ${props.isOpen && "popup_opened"}`}>
-      <div className="popup__container">
-        <h2 className="popup__title">{props.title}</h2>
+    <div
+      className={
+        props.isOpen
+          ? `popup popup_${props.name} popup_opened`
+          : `popup popup_${props.name}`
+      }
+    >
+      <div className={`popup__container popup__container_${props.name}`}>
+        <h3 className={`popup__title popup__title_${props.name}`}>
+          {props.title}
+        </h3>
         <form
-          className={`popup__form popup__${props.name}-form`}
-          name={`popup__${props.name}-form`}
-          noValidate
+          className={`popup__form popup__form_${props.name}`}
+          name={props.name}
         >
           {props.children}
-          <button type="submit" className="popup__button-save">
-            {props.buttonText}
+
+          <button
+            className={`popup__save popup__save_${props.name}`}
+            type="submit"
+          >
+            Сохранить
           </button>
         </form>
-        <button className="popup__button-close" type="button">
-          <img
-            className="popup__icon"
-            src={popupIcon}
-            alt="кнопка закрыть"
-            onClick={props.onClose}
-          />
-        </button>
+        <button
+          className={`popup__close popup__close_${props.name}`}
+          type="button"
+          onClick={props.onClose}
+        ></button>
       </div>
     </div>
   );

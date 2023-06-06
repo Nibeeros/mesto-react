@@ -1,19 +1,26 @@
-import popupIcon from "../images/close-icon.svg";
+function ImagePopup(props) {
+  //console.log(props)
 
-function ImagePopup({ card, onClose }) {
   return (
-    <div className={`popup  ${card.src && "popup_opened"}`}>
-      <div className="popup__container-image">
-        <img className="popup__card-image" src={card.src} alt={card.alt} />
-        <p className="popup__caption">{card.alt}</p>
-        <button className="popup__button-close" type="button">
-          <img
-            className="popup__icon"
-            src={popupIcon}
-            alt="кнопка закрыть"
-            onClick={onClose}
-          />
-        </button>
+    <div
+      className={
+        props.card.link
+          ? `popup popup_edit-image popup_opened`
+          : `popup popup_edit-image`
+      }
+    >
+      <div className="popup__container-images">
+        <img
+          className="popup__images"
+          src={props.card.link}
+          alt={props.card.name}
+        />
+        <p className="popup__images-title">{props.card.name}</p>
+        <button
+          className="popup__close popup__close_edit-image"
+          type="button"
+          onClick={props.onClose}
+        ></button>
       </div>
     </div>
   );
