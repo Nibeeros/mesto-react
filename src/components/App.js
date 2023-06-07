@@ -7,28 +7,28 @@ import { useState } from "react";
 
 
 function App() {
-  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(null);
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
   }
 
-  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(null);
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
 
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true);
   }
 
-  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(null);
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
 
   function handleAddPlaceClick() {
     setIsAddPlacePopupOpen(true);
   }
 
   function closeAllPopups() {
-    setIsEditAvatarPopupOpen(null);
-    setIsEditProfilePopupOpen(null);
-    setIsAddPlacePopupOpen(null);
+    setIsEditAvatarPopupOpen(false);
+    setIsEditProfilePopupOpen(false);
+    setIsAddPlacePopupOpen(false);
     setSelectedCard({name: '', link: ''});
   }
 

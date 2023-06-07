@@ -3,11 +3,7 @@ function ImagePopup(props) {
 
   return (
     <div
-      className={
-        props.card.link
-          ? `popup popup_edit-image popup_opened`
-          : `popup popup_edit-image`
-      }
+    className={`popup popup_edit-image ${props.card.link ? 'popup_opened' : ''}`}
     >
       <div className="popup__container-images">
         <img
