@@ -12,7 +12,7 @@ import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
 
 
 function App() {
-  const [currentUser, setСurrentUser] = useState("");
+  const [currentUser, setСurrentUser] = useState({});
 
   useEffect(() => {
     api
